@@ -2,7 +2,7 @@ var list = [];
 var limit = 25;
 var x = -145, x2 = -145;
 var degree;
-var ratio;
+var ratio = 3;
 
 function Square(x1, y1, len, angle) {
    this.x = x1; //top left
@@ -76,7 +76,7 @@ function Square(x1, y1, len, angle) {
       //    list.push(new Square(this.NewX1(this.x), this.NewY1(this.y), this.NewLen1(), this.angle + degree).drawThings());
       //    list.push(new Square(this.rX1(this.x), this.rY1(this.y), this.NewLen2(), this.angle + PI / 2 + degree).drawThings());
       // }
-      if (this.NewLen1() > limit || this.NewLen2() > limit) {
+      if (this.NewLen1() > limit +1 && this.NewLen2() > limit + 1) {
          list.push(new Square(this.NewX1(this.x), this.NewY1(this.y), this.NewLen1(), this.angle + degree).drawThings());
          list.push(new Square(this.rX1(this.x), this.rY1(this.y), this.NewLen2(), this.angle + PI / 2 + degree).drawThings());
       }
@@ -94,15 +94,15 @@ function control() {
       // println(x);
       limit = map(x, -145, 144, 25, 1);
    }
-   noFill();
-   rect(0, -340, 300, 15);
-   fill(229, 0, 75, 100);
-   rect(x2, -340, 15, 15);
-   if (mouseIsPressed && mouseX >= 155 && mouseX <= 445 && mouseY >= 0 && mouseY <= 70) {
-      x2 = mouseX - 300;
-      // println(x);
-      ratio = map(x2, -145, 144, 2.1, 30);
-   }
+   // noFill();
+   // rect(0, -340, 300, 15);
+   // fill(229, 0, 75, 100);
+   // rect(x2, -340, 15, 15);
+   // if (mouseIsPressed && mouseX >= 155 && mouseX <= 445 && mouseY >= 0 && mouseY <= 70) {
+   //    x2 = mouseX - 300;
+   //    // println(x);
+   //    ratio = map(x2, -145, 144, 2.1, 30);
+   // }
 }
 
 function setup() {
